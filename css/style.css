@@ -1,0 +1,205 @@
+/* RESET CSS */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* DEFAULT STYLES*/
+
+:root {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--blue-1: #212492;
+	--blue-2: #00A2FF;
+	--blue-3: #3FCFD5;
+	--green: #5A9221;
+	--mixed-blackblue: #070B1F;
+	--highlight: #F5EC5A;
+}
+
+/* body */
+
+#page {
+	height: 100vh;
+	background: linear-gradient(140deg, var(--blue-1), var(--blue-2)) no-repeat;
+	background-size: cover;
+}
+ 
+/* Loader e Alerta */
+
+#background-info {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+
+#background-info .spinner-border {
+	width: 4rem;
+	height: 4rem;
+}
+
+.hide {
+	display: none !important;
+}
+
+#message {
+	width: 50%;
+}
+
+.alert.alert-light p {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+	padding: 0.5rem 0;
+}
+
+/* Form header */
+
+#form-header h1 {
+	color: var(--mixed-blackblue);
+	font-weight: 210;
+}
+
+/* Estilização de Inputs */
+
+.form-floating input:focus {
+	box-shadow: 1px 1px 10px green;
+}
