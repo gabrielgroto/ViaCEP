@@ -18,7 +18,7 @@
   <script src="js/scripts.js" defer></script>
 </head>
 
-<body id="page" class="container col-sm-8">
+<body id="page">
   <div id="background-info" class="hide">
     <div id="loader" class="spinner-border text-info hide" role="status"></div>
     <div id="message" class="hide">
@@ -29,43 +29,54 @@
       </div>
     </div>
   </div>
-  <div id="form__header" class="d-flex justify-content-center m-3"><h1>API ViaCEP</h1></div>
-    <div class="row mb-2">
-      <div class="form-floating">
-        <input type="text" class="form-control" id="cep" name="cep" required minlength="8" maxlength="8" pattern="/d{5}-?/d{3}" placeholder="Digite aqui o seu CEP: XXXXXXXX">
-        <label for="cep">Digite aqui o seu CEP: XXXXXXXX</label>
-      </div>
+  <div class="container col-sm-6">
+    <div id="form-header" class="d-flex justify-content-center m-3">
+      <h1>API ViaCEP</h1>
+      <a href="https://unifique.com.br/" target="_blank"><img src="img/Unifique Branco.png" alt="Logo da Unifique" class="img-fluid"></a>
     </div>
-    <div class="row mb-2">
-  
-        <input type="text" class="form-control" placeholder="Rua:">
 
+    <div class="form-floating mb-2">
+      <input type="text" class="form-control" id="cep" name="cep" required minlength="8" maxlength="8" pattern="/d{5}-?/d{3}" placeholder="Digite aqui o seu CEP: XXXXXXXX">
+      <label for="cep">Digite aqui o seu CEP: XXXXXXXX</label>
     </div>
-    <div class="row mb-2">
-      
-        <input type="text" class="form-control" placeholder="Bairro:">
-      
+
+
+    <div class="form-floating mb-2">
+      <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua">
+      <label for="rua">Rua:</label>
     </div>
-    <div class="row mb-2">
-     
-        <input type="text" class="form-control" placeholder="Cidade:">
-    
+
+
+    <div class="form-floating mb-2">
+      <input type="text" class="form-control" id="cidade" name="cidade" placeholder="cidade" disabled>
+      <label for="rua">Cidade</label>
     </div>
-    <div class="row mb-2">
-      
-        <input type="text" class="form-control" placeholder="Estado:">
-     
+
+
+    <div class="form-floating mb-2">
+      <input type="text" class="form-control" id="rua" name="estado" placeholder="estado" disabled>
+      <label for="rua">Estado</label>
     </div>
-    <div class="row mb-2">
-     
-        <input id="regiao" name="regiao" type="text" class="form-control" placeholder="Região:">
-        
-     
+
+    <div class="form-floating mb-2">
+      <input type="text" class="form-control" id="Região" name="Região" placeholder="Região" disabled>
+      <label for="rua">Região</label>
     </div>
-    <div class="d-flex justify-content-end mt-3">
-      <button class="btn btn-search">Pesquisar</button>
-      <button class="btn btn-danger">Pesquisar</button>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="uf" name="uf" placeholder="UF" disabled>
+      <label for="uf">UF</label>
     </div>
+
+
+    <div id="warp-btn" class="d-flex justify-content-end mt-3">
+      <button class="btn btn-secondary">Pesquisar</button>
+      <button class="btn btn-danger">Limpar</button>
+    </div>
+  </div>
+  <footer id="footer hide">
+    <p class="mt-2 mb-2">Atividade de Desenvolvimento | Gabriel Groto</p> <a target="_blank" href="https://github.com/gabrielgroto/ProjetoViaCEP">@github.com</a>
+  </footer>
 </body>
 
 </html>
