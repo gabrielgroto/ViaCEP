@@ -29,51 +29,46 @@
       </div>
     </div>
   </div>
-  <div class="container col-sm-6">
-    <div id="form-header" class="d-flex justify-content-center m-3">
-      <h1>API ViaCEP</h1>
-      <a href="https://unifique.com.br/" target="_blank"><img src="img/Unifique Branco.png" alt="Logo da Unifique" class="img-fluid"></a>
-    </div>
-
-    <div class="form-floating mb-2">
-      <input type="text" class="form-control" id="cep" name="cep" required minlength="8" maxlength="8" pattern="/d{5}-?/d{3}" placeholder="Digite aqui o seu CEP: XXXXXXXX">
-      <label for="cep">Digite aqui o seu CEP: XXXXXXXX</label>
-    </div>
-
-
-    <div class="form-floating mb-2">
-      <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua">
-      <label for="rua">Rua:</label>
-    </div>
-
-
-    <div class="form-floating mb-2">
-      <input type="text" class="form-control" id="cidade" name="cidade" placeholder="cidade" disabled>
-      <label for="rua">Cidade</label>
-    </div>
-
-
-    <div class="form-floating mb-2">
-      <input type="text" class="form-control" id="rua" name="estado" placeholder="estado" disabled>
-      <label for="rua">Estado</label>
-    </div>
-
-    <div class="form-floating mb-2">
-      <input type="text" class="form-control" id="Região" name="Região" placeholder="Região" disabled>
-      <label for="rua">Região</label>
-    </div>
-
-    <div class="form-floating">
-      <input type="text" class="form-control" id="uf" name="uf" placeholder="UF" disabled>
-      <label for="uf">UF</label>
-    </div>
+  <div class="container col-lg-6 contForm">
+    <form>
+      <div id="form-header" class="d-flex justify-content-center m-3">
+        <a href="https://github.com/gabrielgroto/ProjetoViaCEP" target="_blank">
+          <h1>API ViaCEP</h1>
+        </a>
+        <a href="https://unifique.com.br/" target="_blank"><img src="img/Unifique Branco.png" alt="Logo da Unifique" class="img-fluid"></a>
+      </div>
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control" id="cep" name="cep" required minlength="8" maxlength="8" pattern="/d{5}-?/d{3}" placeholder="Digite aqui o seu CEP: XXXXXXXX">
+        <label for="cep">Digite aqui o seu CEP: XXXXXXXX</label>
+      </div>
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" maxlength="35">
+        <label for="rua">Rua:</label>
+      </div>
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="cidade" disabled>
+        <label for="rua">Cidade</label>
+      </div>
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control" id="rua" name="estado" placeholder="estado" disabled>
+        <label for="rua">Estado</label>
+      </div>
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control" id="Região" name="Região" placeholder="Região" disabled>
+        <label for="rua">Região</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="uf" name="uf" placeholder="UF" disabled>
+        <label for="uf">UF</label>
+      </div>
+    </form>
 
 
     <div id="warp-btn" class="d-flex justify-content-end mt-3">
       <button class="btn btn-secondary">Pesquisar</button>
       <button class="btn btn-danger">Limpar</button>
     </div>
-  </div>  
+  </div>
 </body>
 
 </html>
