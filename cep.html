@@ -20,17 +20,19 @@
 
 <body id="page">
   <div id="background-info" class="hide">
-    <div id="loader" class="spinner-border text-info hide" role="status"></div>
-    <div id="message" class="hide">
-      <div class="alert alert-light" role="alert">
-        <h4>Alerta!</h4>
-        <p>Texto de Alerta</p>
-        <button id="fechar-mensagem" type="button" class="btn btn-danger">Fechar</button>
+    <div class="container col-12 d-flex align-items-center justify-content-center">
+      <div id="loader" class="spinner-border text-info hide" role="status"></div>
+      <div id="message" class="hide">
+        <div class="alert alert-light" role="alert">
+          <h4>Alerta!</h4>
+          <p id="pmessage">Texto de Alerta</p>
+          <button id="fechar-mensagem" type="button" class="btn btn-danger">Fechar</button>
+        </div>
       </div>
     </div>
   </div>
   <div class="container col-lg-6 contForm">
-    <form>
+    <form class="formulario">
       <div id="form-header" class="d-flex justify-content-center m-3">
         <a href="https://github.com/gabrielgroto/ProjetoViaCEP" target="_blank">
           <h1>API ViaCEP</h1>
@@ -42,20 +44,16 @@
         <label for="cep">Digite aqui o seu CEP: XXXXXXXX</label>
       </div>
       <div class="form-floating mb-2">
-        <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" maxlength="35">
-        <label for="rua">Rua:</label>
-      </div>
-      <div class="form-floating mb-2">
         <input type="text" class="form-control" id="cidade" name="cidade" placeholder="cidade" disabled>
-        <label for="rua">Cidade</label>
+        <label for="cidade">Cidade</label>
       </div>
       <div class="form-floating mb-2">
-        <input type="text" class="form-control" id="rua" name="estado" placeholder="estado" disabled>
-        <label for="rua">Estado</label>
+        <input type="text" class="form-control" id="estado" name="estado" placeholder="estado" disabled>
+        <label for="estado">Estado</label>
       </div>
       <div class="form-floating mb-2">
-        <input type="text" class="form-control" id="Região" name="Região" placeholder="Região" disabled>
-        <label for="rua">Região</label>
+        <input type="text" class="form-control" id="regiao" name="regiao" placeholder="Região" disabled>
+        <label for="regiao">Região</label>
       </div>
       <div class="form-floating">
         <input type="text" class="form-control" id="uf" name="uf" placeholder="UF" disabled>
@@ -65,8 +63,8 @@
 
 
     <div id="warp-btn" class="d-flex justify-content-end mt-3">
-      <button class="btn btn-secondary">Pesquisar</button>
-      <button class="btn btn-danger">Limpar</button>
+      <button id="btn-pesquisar" class="btn btn-secondary">Pesquisar</button>
+      <button id="btn-limpar" class="btn btn-danger">Limpar</button>
     </div>
   </div>
 </body>

@@ -1,14 +1,21 @@
-const containerForm = document.querySelector(".contForm");
+// Seleção de elementos
+
 const inputCep = document.querySelector("#cep");
-const inputRua = document.querySelector("#rua");
 const inputCidade = document.querySelector("#cidade");
 const inputEstado = document.querySelector("#estado");
 const inputRegiao = document.querySelector("#regiao");
 const inputUf = document.querySelector("#uf");
+const background = document.querySelector("#background-info");
+const loader = document.querySelector("#loader");
+const btnPesquisar = document.querySelector("#btn-pesquisar");
+const btnLimpar = document.querySelector("#btn-limpar")
 const fecharMsg = document.querySelector("#fechar-mensagem");
+const form = document.querySelector(".formulario");
+const accept = /^[0-9\r\n]*$/;
+
+// Eventos
 
 inputCep.addEventListener("keypress", (evento) => {
-  const accept = /[0-9]/;
   const keyPress = String.fromCharCode(evento.keyCode);
   if (!accept.test(keyPress)) {
     evento.preventDefault();
@@ -17,18 +24,65 @@ inputCep.addEventListener("keypress", (evento) => {
   }
 })
 
-inputCep.addEventListener("keyUp", (evento) => {
-  const valorDoInput = evento.target.value;
-  if(valorDoInput.length === 8) {
-    apiFunction(inputValue);
-    }
+inputCep.addEventListener("keypress", (press) => {
+  const valorDoInput = inputCep.value;
+  if (press.key === 'Enter') {
+    apiFunction(valorDoInput);
+  }
+  // else if (valorDoInput === "") {
+  //   errorFunction("Por favor, forneça um valor de CEP válido!")
+  // (Parte do código que necessita de auxílio) }
+  return
 })
 
-const apiFunction = async (cep) => {
+btnPesquisar.addEventListener("click", () => {
+  const valorDoInput = inputCep.value;
+  if (valorDoInput.length === 8) {
+    apiFunction(valorDoInput);
+  }
+  else {
+    errorFunction("O CEP fornecido não foi encontrado, tente novamente!")
+  }
+  return
+})
 
+btnLimpar.addEventListener("click", () => {
+  form.reset();
+})
+
+fecharMsg.addEventListener("click", () => errorFunction());
+
+// Funções
+
+function mostrarLoader() {
+  background.classList.toggle("hide");
+  loader.classList.toggle("hide");
 }
 
-const mostrarLoader = () => {
+function errorFunction(msg) {
+  const blockMsg = document.querySelector("#message");
   const background = document.querySelector("#background-info");
-  const loader = document.querySelector("#loader");
+  const pMessage = document.querySelector("#pmessage");
+  pMessage.innerText = msg;
+  blockMsg.classList.toggle("hide");
+  background.classList.toggle("hide");
+}
+
+async function apiFunction(cep) {
+  mostrarLoader();
+  inputCep.blur();
+  const api = `https://viacep.com.br/ws/${cep}/json/`;
+  const resposta = await fetch(api);
+  const dados = await resposta.json();
+  if (dados.erro === 'true') {
+    form.reset();
+    mostrarLoader();
+    errorFunction("O CEP fornecido não foi encontrado, tente novamente!")
+    return
+  }
+  inputCidade.value = dados.localidade;
+  inputEstado.value = dados.estado;
+  inputRegiao.value = dados.regiao;
+  inputUf.value = dados.uf;
+  mostrarLoader();
 }
