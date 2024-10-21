@@ -194,6 +194,12 @@ table {
 	padding: 0.5rem 0;
 }
 
+.form-floating input {
+	border: none;
+	box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.100);
+	background: linear-gradient(150deg, var(--white), var(--blue-3));
+}
+
 /* Form header */
 
 #form-header {
