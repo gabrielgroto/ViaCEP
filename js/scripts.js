@@ -36,6 +36,7 @@ btnPesquisar.addEventListener("click", () => {
   const valorDoInput = inputCep.value;
   if (valorDoInput.length !== 8) {
     errorFunction('Por favor, forneça um valor de CEP válido!');
+    form.reset();
   }
   else {
     apiFunction(valorDoInput);
@@ -74,7 +75,7 @@ async function apiFunction(cep) {
   if (dados.erro === 'true') {
     form.reset();
     mostrarLoader();
-    errorFunction("O CEP fornecido não foi encontrado, tente novamente!")
+    errorFunction("Por favor, forneça um valor de CEP válido!")
     return
   }
   inputCidade.value = dados.localidade;
