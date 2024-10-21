@@ -194,12 +194,6 @@ table {
 	padding: 0.5rem 0;
 }
 
-.form-floating input {
-	border: none;
-	box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.100);
-	background: linear-gradient(150deg, var(--white), var(--blue-3));
-}
-
 /* Form header */
 
 #form-header {
@@ -226,10 +220,15 @@ table {
 
 /* Estilização de Inputs */
 
-.form-floating input:focus {
-	background-color: #d5d5db70;
-	border: 0;
-	color: #fff;
+form-floating input {
+	border: none;
+	box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.100);
+	background: linear-gradient(150deg, var(--white), var(--blue-3));
+	color: #070B1F
+}
+
+label {
+	color: #070B1F;
 }
 
 /* footer */
