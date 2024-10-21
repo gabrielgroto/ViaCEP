@@ -79,6 +79,7 @@ async function apiFunction(cep) {
     form.reset();
     mostrarLoader();
     errorFunction("O CEP fornecido não foi encontrado, tente novamente!")
+    return
   }
   inputCidade.value = dados.localidade;
   inputEstado.value = dados.estado;
