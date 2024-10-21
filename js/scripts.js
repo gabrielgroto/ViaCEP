@@ -20,7 +20,7 @@ inputCep.addEventListener("keypress", (evento) => {
   const keyPress = String.fromCharCode(evento.keyCode);
   if (!accept.test(keyPress)) {
     evento.preventDefault();
-    alert("Apenas números de 0-9 são permitidos!");
+    alert("Apenas números de 0 a 9 são permitidos!");
     return
   }
 })
@@ -30,19 +30,15 @@ inputCep.addEventListener("keypress", (press) => {
   if (press.key === 'Enter') {
     apiFunction(valorDoInput);
   }
-  // else if (valorDoInput === "") {
-  //   errorFunction("Por favor, forneça um valor de CEP válido!")
-  // (Parte do código que necessita de auxílio) }
-  return
 })
 
 btnPesquisar.addEventListener("click", () => {
   const valorDoInput = inputCep.value;
-  if (valorDoInput.length === 8) {
-    apiFunction(valorDoInput);
+  if (valorDoInput.length !== 8) {
+    errorFunction('Por favor, forneça um valor de CEP válido!');
   }
   else {
-    errorFunction("O CEP fornecido não foi encontrado, tente novamente!")
+    apiFunction(valorDoInput);
   }
   return
 })
