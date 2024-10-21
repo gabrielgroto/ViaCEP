@@ -10,7 +10,6 @@ const background = document.querySelector("#background-info");
 const loader = document.querySelector("#loader");
 const btnPesquisar = document.querySelector("#btn-pesquisar");
 const btnLimpar = document.querySelector("#btn-limpar")
-
 const fecharMsg = document.querySelector("#fechar-mensagem");
 const form = document.querySelector(".formulario");
 const accept = /^[0-9\r\n]*$/;
@@ -80,10 +79,6 @@ async function apiFunction(cep) {
     form.reset();
     mostrarLoader();
     errorFunction("O CEP fornecido não foi encontrado, tente novamente!")
-  }
-  else if (dados.logradouro === "") {
-    inputRua.innerText = 'Este CEP não fornece dados de logradouro';
-    return
   }
   inputCidade.value = dados.localidade;
   inputEstado.value = dados.estado;
