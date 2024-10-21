@@ -220,6 +220,11 @@ table {
 
 /* Estilização de Inputs */
 
+.form-floating input:focus {
+	background-color: #d5d5db70;
+	border: 0;
+	color: #fff;
+}
 
 /* footer */
 
@@ -234,6 +239,7 @@ table {
 /* Btn */
 
 #wrap-btn {
+	margin-bottom: 1rem;
 	display: flex;
 	justify-content: flex-end;
 }
