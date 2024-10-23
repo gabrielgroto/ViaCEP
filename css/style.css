@@ -219,7 +219,12 @@ table {
 }
 
 /* Estilização de Inputs */
+.form-floating input:focus {
+	background-color: #d5d5db70;
+	border: 0;
+	color: #fff;
 
+}
 
 /* footer */
 
