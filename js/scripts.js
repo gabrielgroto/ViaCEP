@@ -84,5 +84,4 @@ async function apiFunction(cep) {
   inputUf.value = dados.uf;
   inputRua.value = dados.logradouro;
   mostrarLoader();
-
 }
