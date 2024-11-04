@@ -1,5 +1,4 @@
 // Seleção de elementos
-
 const inputCep = document.querySelector("#cep");
 const inputCidade = document.querySelector("#cidade");
 const inputEstado = document.querySelector("#estado");
@@ -15,7 +14,6 @@ const form = document.querySelector(".formulario");
 const accept = /^[0-9\r\n]*$/;
 
 // Eventos
-
 inputCep.addEventListener("keypress", (evento) => {
   const keyPress = String.fromCharCode(evento.keyCode);
   if (!accept.test(keyPress)) {
@@ -23,14 +21,14 @@ inputCep.addEventListener("keypress", (evento) => {
     alert("Apenas números de 0 a 9 são permitidos!");
     return
   }
-})
+});
 
 inputCep.addEventListener("keypress", (press) => {
   const valorDoInput = inputCep.value;
   if (press.key === 'Enter') {
     apiFunction(valorDoInput);
   }
-})
+});
 
 btnPesquisar.addEventListener("click", () => {
   const valorDoInput = inputCep.value;
@@ -42,20 +40,19 @@ btnPesquisar.addEventListener("click", () => {
     apiFunction(valorDoInput);
   }
   return
-})
+});
 
 btnLimpar.addEventListener("click", () => {
   form.reset();
-})
+});
 
 fecharMsg.addEventListener("click", () => errorFunction());
 
 // Funções
-
 function mostrarLoader() {
   background.classList.toggle("hide");
   loader.classList.toggle("hide");
-}
+};
 
 function errorFunction(msg) {
   const blockMsg = document.querySelector("#message");
@@ -64,7 +61,7 @@ function errorFunction(msg) {
   pMessage.innerText = msg;
   blockMsg.classList.toggle("hide");
   background.classList.toggle("hide");
-}
+};
 
 async function apiFunction(cep) {
   mostrarLoader();
@@ -75,7 +72,7 @@ async function apiFunction(cep) {
   if (dados.erro === 'true') {
     form.reset();
     mostrarLoader();
-    errorFunction("Por favor, forneça um valor de CEP válido!")
+    errorFunction("Por favor, forneça um valor de CEP válido!");
     return
   }
   inputCidade.value = dados.localidade;
@@ -84,4 +81,4 @@ async function apiFunction(cep) {
   inputUf.value = dados.uf;
   inputRua.value = dados.logradouro;
   mostrarLoader();
-}
+};
