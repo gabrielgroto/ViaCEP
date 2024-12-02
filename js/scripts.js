@@ -5,6 +5,7 @@ const inputEstado = document.querySelector("#estado");
 const inputRegiao = document.querySelector("#regiao");
 const inputUf = document.querySelector("#uf");
 const inputRua = document.querySelector("#rua");
+const inputBairro = document.querySelector("#bairro");
 const background = document.querySelector("#background-info");
 const loader = document.querySelector("#loader");
 const btnPesquisar = document.querySelector("#btn-pesquisar");
@@ -70,15 +71,16 @@ async function apiFunction(cep) {
   const resposta = await fetch(api);
   const dados = await resposta.json();
   if (dados.erro === 'true') {
-    form.reset();
     mostrarLoader();
     errorFunction("Por favor, forneça um valor de CEP válido!");
+    form.reset();
     return
   }
+  mostrarLoader();
   inputCidade.value = dados.localidade;
   inputEstado.value = dados.estado;
   inputRegiao.value = dados.regiao;
   inputUf.value = dados.uf;
   inputRua.value = dados.logradouro;
-  mostrarLoader();
+  inputBairro.value = dados.bairro
 };

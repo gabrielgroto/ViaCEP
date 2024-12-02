@@ -195,12 +195,12 @@ table {
 }
 
 #form-header img {
-	max-width: 100px;
+	max-width: 110px;
 }
 
 #form-header h1 {
 	color: var(--white);
-	font-weight: 500;
+	font-weight: 400;
 	transition: 0.3s ease-out;
 }
 
@@ -210,9 +210,17 @@ table {
 
 /* Estilização de Inputs */
 .form-floating input:focus {
-	background-color: #d5d5db70;
+	background-color: #f2f2f5c9;
 	border: 0;
-	color: #fff;
+}
+
+.form-floating input {
+	box-shadow: #070b1f77 1px 1px 5px;
+	border: 0px;
+}
+
+.form-floating label {
+	color: #0000008f;
 }
 
 /* Btn */
@@ -221,6 +229,6 @@ table {
 	justify-content: flex-end;
 }
 
-.btn+.btn {
+.btn + .btn {
 	margin-left: 1rem;
 }
