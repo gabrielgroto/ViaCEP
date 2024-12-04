@@ -82,5 +82,5 @@ async function apiFunction(cep) {
   inputRegiao.value = dados.regiao;
   inputUf.value = dados.uf;
   inputRua.value = dados.logradouro;
-  inputBairro.value = dados.bairro
+  inputBairro.value = dados.bairro;
 };
